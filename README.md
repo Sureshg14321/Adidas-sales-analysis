@@ -62,29 +62,19 @@ Date Table[Date] → Sales Table[Invoice Date]
 ## 📊 DAX Measures
 
 ```DAX
-Total Revenue =
-SUM('Data Sales Adidas'[Total Sales])
+Total Revenue =SUM('Data Sales Adidas'[Total Sales])
 
-Total Profit =
-SUM('Data Sales Adidas'[Operating Profit])
+Total Profit =SUM('Data Sales Adidas'[Operating Profit])
 
-Total Units Sold =
-SUM('Data Sales Adidas'[Units Sold])
+Total Units Sold =SUM('Data Sales Adidas'[Units Sold])
 
-Profit Margin % =
-DIVIDE([Total Profit], [Total Revenue])
+Profit Margin % =DIVIDE([Total Profit], [Total Revenue])
 
-Sales LY =
-CALCULATE(
-    [Total Revenue],
-    SAMEPERIODLASTYEAR('Date Table'[Date])
-)
+Sales LY =CALCULATE([Total Revenue],SAMEPERIODLASTYEAR('Date Table'[Date]))
 
-Sales Growth % =
-DIVIDE([Total Revenue] - [Sales LY], [Sales LY])
+Sales Growth % =DIVIDE([Total Revenue] - [Sales LY], [Sales LY])
 
-Avg Price Per Unit =
-AVERAGE('Data Sales Adidas'[Price per Unit])
+Avg Price Per Unit =AVERAGE('Data Sales Adidas'[Price per Unit])
 ```
 
 ---
